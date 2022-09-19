@@ -1,54 +1,34 @@
-# Pace gets organised 📅
+# Project Writeup
 
-Thank you for taking the time to interview with Pace! We have a coding exercise we would like you to do to show us your skills, and give us something to talk about in our technical interview.
+![Test Calendar View](./calendar.png)
 
-## Expectations
+## What choices did you make and why?
 
-The exercise was designed to be solvable in an afternoon, yet a robust and comprehensive solution could take much longer. Rather than building a complete solution, please constrain yourself to around **three hours**, and use a shortup writeup to mention anything not achieved or any known limitations.
+- I chose to not use any 3rd party library.
+- I decided to build a hash table with function `createTimeSlots` where the keys are the different times from 12am to 11pm and the value of each is an array of events that fall within that time period.
+- The calendar view is built with just 3 components:
 
-## Requirements
+1. `Calendar` - Higher order component that displays all time slots and their associated events
+2. `TimeSlot` - Displays a time Slot and its associated events
+3. `Event` - Displays an event's start time and title
 
-![Example](./example.png)
+## What challenges did you face?
 
-We would like to build a simple day view for a calendar, populated with data from a graphql API. The API returns a list of events which have a start and end time in minutes since midnight. So 9am is 540 minutes, 9.30 is 570 minutes and so on.
+- Calculating the various heights and displaying them accurately
+- Figuring out the best way to build the components to be simple
 
-When rendering the calendar:
+## What tradeoffs did you choose?
 
-- Events should be shown without any overlapping
-- If multiple events collide, then they should have equal width
-- Styling can be kept extremely simple
-- We only need to display the events
+- Chose correctness over completness and handling every edge-cases given time constraints to work on the challenge
 
-Your submission should also be reflective of how you would write production quality code, but don't fret if you run out of time - we aren't expecting polished solutions.
+## What do you like and not like about your solution?
 
-## Writeup
+- I like that it's very simple to implement
+- I don't like that it seems hacked together to some extent
 
-Written communication and thoughtful self-reflection is an important part of our work. This is an opportunity for you to tell us a bit more about the work you did. The writeup shouldn’t be long, but we will use it as part of the evaluation and discuss it in subsequent interview, so you should spend a bit of time and focus on it.
+## What areas would you work on next?
 
-Here are some example questions your writeup could address:
-
-- What choices did you make and why?
-- What challenges did you face?
-- What tradeoffs did you choose?
-- What do you like and not like about your solution?
-- What areas would you work on next?
-
-We love feedback. If there’s anything you think could be improved with this exercise, please share your thoughts in the writeup, too.
-
-## Technologies
-
-We've gotten you started using a [next.js](https://nextjs.org/) boilerplate including sample data. If you're not familar with the framework then no problem, we don't use any of its additional features here or require server-side rendering. To complete the requirements:
-
-- You may use any open source, publicly available third party libraries or components you would like **except calendar components like [fullcalendar](https://fullcalendar.io/)**.
-- You may use any testing framework or approach you prefer, or not write tests at all.
-
-## Deliverables
-
-We expect you to deliver:
-
-1. Source code of a web app that fulfils, as far as possible, the above requirements and uses the specified technologies, delivered in form of a Git repository. The Repository can be public or private, on GitHub, GitLab or BitBucket, CodeSandboxed, or zipped and emailed to us.
-2. A short writeup of your work in form of a Markdown readme in the project.
-
-Good Luck and have fun!
-
-Once completed, please email your solution to ben@pacerevenue.com. If you have any questions, please let us know!
+- Improve createTimeSlot function to handle more edge-cases or get a different way to implement same functionality
+- Understand NestJs architecture and best practices so I can re-organize the code better
+- Test components for edgecases
+- Improve on styling
